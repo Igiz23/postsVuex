@@ -11,7 +11,9 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+/** подключаем компонент для создания поста**/
 import PostForm from "./components/PostForm";
+
 export default {
   name: "App",
   components: { PostForm },
@@ -21,7 +23,7 @@ export default {
   computed: mapGetters(["validPosts", "countPosts"]),
   methods: mapActions(["fetchPosts"]),
   async mounted() {
-    this.fetchPosts(2);
+    await this.fetchPosts(2);
   },
 };
 </script>
