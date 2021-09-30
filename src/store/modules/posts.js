@@ -19,6 +19,9 @@ export default {
       const posts = await res.json();
       ctx.commit("updatePosts", posts);
     },
+    delPost(ctx, id) {
+      ctx.commit("deletePost", id);
+    },
   },
   /** Единственным способом изменения состояния хранилища во Vuex являются мутации
    * Вызывать функцию-обработчик напрямую — нельзя
@@ -34,6 +37,11 @@ export default {
     },
     createPost(state, newPost) {
       state.posts.unshift(newPost);
+    },
+    deletePost(state, id) {
+      state.post = state.posts.filter((p) => {
+        p.id !== id;
+      });
     },
   },
   /**

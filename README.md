@@ -1,4 +1,9 @@
-# vuex-test
+# Vuex notes
+[API](https://jsonplaceholder.typicode.com/)
+
+Vue v2.6.14
+
+Vuex v3.6.2
 
 ## Project setup
 ```
